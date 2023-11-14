@@ -1,3 +1,7 @@
+<h1>MERN Workshop</h1>
+
+<p>MERN Workshop is a blog post project made by MongoDB, Express, React and Node.js.</p>
+
 <h2>IntelliSense</h2>
 
 <p>If Intellisense isn't working, follow these methods.</p>
