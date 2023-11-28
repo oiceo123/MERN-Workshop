@@ -29,7 +29,7 @@ exports.create = (req, res) => {
     if (err) {
       return res.status(400).json({
         trace_id: createErr,
-        error: err,
+        error: "มีชื่อบทความซ้ำกัน",
       });
     }
     res.status(201).json(result);
