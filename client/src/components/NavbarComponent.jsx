@@ -1,16 +1,18 @@
+import { Link } from "react-router-dom";
+
 function NavbarComponent() {
   return (
     <nav>
       <ul className="nav nav-tabs">
         <li className="nav-item py-3">
-          <a href="/" className="nav-link">
-            หน้าแรก
-          </a>
+          <div className="nav-link">
+            <Link to="/">หน้าแรก</Link>
+          </div>
         </li>
         <li className="nav-item py-3">
-          <a href="/create" className="nav-link">
-            เขียนบทความ
-          </a>
+          <div className="nav-link">
+            <Link to="/create">เขียนบทความ</Link>
+          </div>
         </li>
       </ul>
     </nav>
