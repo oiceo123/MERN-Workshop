@@ -1,14 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "../api";
 import Swal from "sweetalert2";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 function FormComponent() {
   const [state, setState] = useState({
     title: "",
-    content: "",
     author: "",
   });
-  const { title, content, author } = state;
+  const { title, author } = state;
+
+  const [content, setContent] = useState("");
 
   // ฟังก์ชั่นนี้มีค่าเท่ากับฟังก์ชั่นด้านล่าง
   /* const inputValue = function (name) {
@@ -21,6 +24,10 @@ function FormComponent() {
     setState({ ...state, [name]: event.target.value });
   };
 
+  const updateContent = (data) => {
+    setContent(data);
+  };
+
   const submitForm = (event) => {
     event.preventDefault();
     axios
@@ -31,7 +38,8 @@ function FormComponent() {
           text: "บันทึกข้อมูลบทความเรียบร้อย",
           icon: "success",
         });
-        setState({ ...state, title: "", content: "", author: "" });
+        setState({ ...state, title: "", author: "" });
+        setContent("");
       })
       .catch((err) => {
         Swal.fire({
@@ -57,11 +65,12 @@ function FormComponent() {
         </div>
         <div className="form-group">
           <label>รายละเอียด</label>
-          <textarea
-            className="form-control"
+          <ReactQuill
             value={content}
-            onChange={inputValue("content")}
-          ></textarea>
+            onChange={updateContent}
+            theme="snow"
+            placeholder="เขียนรายละเอียดบทความของคุณ"
+          />
         </div>
         <div className="form-group">
           <label>ผู้แต่ง</label>

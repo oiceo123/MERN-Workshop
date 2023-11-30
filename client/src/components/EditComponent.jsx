@@ -1,23 +1,26 @@
 import { useState, useEffect } from "react";
 import axios from "../api";
 import Swal from "sweetalert2";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 function EditComponent(props) {
   const param = props.match.params.slug;
   const [state, setState] = useState({
     title: "",
-    content: "",
     author: "",
     slug: "",
   });
-  const { title, content, author, slug } = state;
+  const { title, author, slug } = state;
+  const [content, setContent] = useState("");
 
   useEffect(() => {
     axios
       .get(`/blog/${param}`)
       .then((res) => {
         const { title, content, author, slug } = res.data;
-        setState({ ...state, title, content, author, slug });
+        setState({ ...state, title, author, slug });
+        setContent(content);
       })
       .catch((err) => {
         alert(err);
@@ -38,11 +41,11 @@ function EditComponent(props) {
       </div>
       <div className="form-group">
         <label>รายละเอียด</label>
-        <textarea
-          className="form-control"
+        <ReactQuill
           value={content}
-          onChange={inputValue("content")}
-        ></textarea>
+          onChange={updateContent}
+          theme="snow"
+        />
       </div>
       <div className="form-group">
         <label>ผู้แต่ง</label>
@@ -69,6 +72,10 @@ function EditComponent(props) {
     setState({ ...state, [name]: event.target.value });
   };
 
+  const updateContent = (data) => {
+    setContent(data);
+  };
+
   const submitForm = (event) => {
     event.preventDefault();
     axios
@@ -80,7 +87,8 @@ function EditComponent(props) {
           icon: "success",
         });
         const { title, content, author, slug } = res.data;
-        setState({ ...state, title, content, author, slug });
+        setState({ ...state, title, author, slug });
+        setContent(content);
       })
       .catch((err) => {
         Swal.fire({
