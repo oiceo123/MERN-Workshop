@@ -66,4 +66,15 @@ const remove = (req, res) => {
   });
 };
 
-module.exports = { create, getAllBlogs, singleBlog, remove };
+const update = (req, res) => {
+  const { slug } = req.params;
+  const { title, content, author } = req.body;
+  blogs
+    .findOneAndUpdate({ slug }, { title, content, author }, { new: true })
+    .exec((err, blog) => {
+      if (err) console.log(err);
+      res.status(200).json(blog);
+    });
+};
+
+module.exports = { create, getAllBlogs, singleBlog, remove, update };
