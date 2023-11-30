@@ -2,6 +2,7 @@ import axios from "./api";
 import { useState, useEffect } from "react";
 import formatDate from "./utils/formatDate";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
@@ -22,6 +23,38 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const confirmDelete = (slug) => {
+    Swal.fire({
+      title: "คุณต้องการลบบทความหรือไม่ ?",
+      icon: "warning",
+      showCancelButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteBlog(slug);
+      }
+    });
+  };
+
+  const deleteBlog = (slug) => {
+    axios
+      .delete(`blog/${slug}`)
+      .then((res) => {
+        Swal.fire({
+          title: "Deleted!",
+          text: res.data.message,
+          icon: "success",
+        });
+        fetchData();
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "ERROR",
+          text: "เกิดข้อผิดพลาดบางอย่าง",
+          icon: "error",
+        });
+      });
+  };
+
   return (
     <>
       {blogs.map((blog, index) => (
@@ -38,6 +71,14 @@ function App() {
             <p className="text-muted">
               ผู้เขียน: {blog.author} เผยแพร่ : {formatDate(blog.createdAt)}
             </p>
+            <button className="btn btn-outline-success">อัพเดทบทความ</button>{" "}
+            &nbsp;
+            <button
+              className="btn btn-outline-danger"
+              onClick={() => confirmDelete(blog.slug)}
+            >
+              ลบบทความ
+            </button>
           </div>
         </div>
       ))}
