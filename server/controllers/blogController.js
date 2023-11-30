@@ -56,4 +56,14 @@ const singleBlog = (req, res) => {
   });
 };
 
-module.exports = { create, getAllBlogs, singleBlog };
+const remove = (req, res) => {
+  const { slug } = req.params;
+  blogs.findOneAndRemove({ slug }).exec((err, blog) => {
+    if (err) console.log(err);
+    res.status(200).json({
+      message: "ลบบทความเรียบร้อย",
+    });
+  });
+};
+
+module.exports = { create, getAllBlogs, singleBlog, remove };
