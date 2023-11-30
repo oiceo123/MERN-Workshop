@@ -71,8 +71,12 @@ function App() {
             <p className="text-muted">
               ผู้เขียน: {blog.author} เผยแพร่ : {formatDate(blog.createdAt)}
             </p>
-            <button className="btn btn-outline-success">อัพเดทบทความ</button>{" "}
-            &nbsp;
+            <Link
+              className="btn btn-outline-success"
+              to={`/blog/edit/${blog.slug}`}
+            >
+              อัพเดทบทความ
+            </Link>{" "}
             <button
               className="btn btn-outline-danger"
               onClick={() => confirmDelete(blog.slug)}

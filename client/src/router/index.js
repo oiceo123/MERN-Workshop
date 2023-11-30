@@ -3,6 +3,7 @@ import App from "../App";
 import FormComponent from "../components/FormComponent";
 import SingleComponent from "../components/SingleComponent";
 import NavbarComponent from "../components/NavbarComponent";
+import EditComponent from "../components/EditComponent";
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
           <Route path="/" component={App} exact />
           <Route path="/create" component={FormComponent} exact />
           <Route path="/blog/:slug" component={SingleComponent} exact />
+          <Route path="/blog/edit/:slug" component={EditComponent} exact />
         </Switch>
       </div>
     </BrowserRouter>
