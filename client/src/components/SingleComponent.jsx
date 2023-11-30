@@ -1,6 +1,7 @@
 import axios from "../api";
 import { useState, useEffect } from "react";
 import formatDate from "../utils/formatDate";
+import parse from "html-react-parser";
 
 function SingleComponent(props) {
   const param = props.match.params.slug;
@@ -20,11 +21,15 @@ function SingleComponent(props) {
 
   return (
     <>
-      <h1>{blog.title}</h1>
-      <p>{blog.content}</p>
-      <p className="text-muted">
-        ผู้เขียน: {blog.author} เผยแพร่ : {formatDate(blog.createdAt)}
-      </p>
+      {blog && (
+        <>
+          <h1>{blog.title}</h1>
+          <div className="pt-3">{parse(blog.content)}</div>
+          <p className="text-muted">
+            ผู้เขียน: {blog.author} เผยแพร่ : {formatDate(blog.createdAt)}
+          </p>
+        </>
+      )}
     </>
   );
 }

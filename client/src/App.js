@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import formatDate from "./utils/formatDate";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import parse from "html-react-parser";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
@@ -67,7 +68,7 @@ function App() {
             <Link to={`/blog/${blog.slug}`}>
               <h2>{blog.title}</h2>
             </Link>
-            <p>{blog.content.substring(0, 250)}</p>
+            <div className="pt-3">{parse(blog.content.substring(0, 250))}</div>
             <p className="text-muted">
               ผู้เขียน: {blog.author} เผยแพร่ : {formatDate(blog.createdAt)}
             </p>
