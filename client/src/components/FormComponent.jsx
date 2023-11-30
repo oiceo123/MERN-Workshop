@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NavbarComponent from "./NavbarComponent";
 import axios from "../api";
 import Swal from "sweetalert2";
 
@@ -44,8 +43,7 @@ function FormComponent() {
   };
 
   return (
-    <div className="container p-5">
-      <NavbarComponent />
+    <>
       <h1>เขียนบทความ</h1>
       <form onSubmit={submitForm}>
         <div className="form-group">
@@ -77,7 +75,7 @@ function FormComponent() {
         <br />
         <input type="submit" value="บันทึก" className="btn btn-primary" />
       </form>
-    </div>
+    </>
   );
 }
 

@@ -1,4 +1,3 @@
-import NavbarComponent from "./components/NavbarComponent";
 import axios from "./api";
 import { useState, useEffect } from "react";
 import formatDate from "./utils/formatDate";
@@ -24,8 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div className="container p-5">
-      <NavbarComponent />
+    <>
       {blogs.map((blog, index) => (
         <div
           className="row"
@@ -43,7 +41,7 @@ function App() {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }
 

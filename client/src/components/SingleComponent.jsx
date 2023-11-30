@@ -1,6 +1,5 @@
 import axios from "../api";
 import { useState, useEffect } from "react";
-import NavbarComponent from "./NavbarComponent";
 import formatDate from "../utils/formatDate";
 
 function SingleComponent(props) {
@@ -20,14 +19,13 @@ function SingleComponent(props) {
   }, []);
 
   return (
-    <div className="container p-5">
-      <NavbarComponent />
+    <>
       <h1>{blog.title}</h1>
       <p>{blog.content}</p>
       <p className="text-muted">
         ผู้เขียน: {blog.author} เผยแพร่ : {formatDate(blog.createdAt)}
       </p>
-    </div>
+    </>
   );
 }
 
