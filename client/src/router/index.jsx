@@ -5,6 +5,7 @@ import SingleComponent from "../components/SingleComponent";
 import NavbarComponent from "../components/NavbarComponent";
 import EditComponent from "../components/EditComponent";
 import LoginComponent from "../components/LoginComponent";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = () => {
   return (
@@ -13,9 +14,13 @@ const Router = () => {
         <NavbarComponent />
         <Switch>
           <Route path="/" component={App} exact />
-          <Route path="/create" component={FormComponent} exact />
+          <PrivateRoute path="/create" component={FormComponent} exact />
           <Route path="/blog/:slug" component={SingleComponent} exact />
-          <Route path="/blog/edit/:slug" component={EditComponent} exact />
+          <PrivateRoute
+            path="/blog/edit/:slug"
+            component={EditComponent}
+            exact
+          />
           <Route path="/login" component={LoginComponent} exact />
         </Switch>
       </div>
