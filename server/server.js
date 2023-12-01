@@ -8,6 +8,7 @@ require("dotenv").config(); // load config in .env file
 // Import routes
 const healtCheck = require("./routes/healthCheck");
 const blogRoute = require("./routes/blog");
+const authRoute = require("./routes/auth");
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use(morgan("dev")); // set logging
 // route
 app.use("/api", healtCheck);
 app.use("/api", blogRoute);
+app.use("/api", authRoute);
 
 // listen
 const port = process.env.PORT || 8080;
