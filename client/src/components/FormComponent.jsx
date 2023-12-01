@@ -3,11 +3,12 @@ import axios from "../api";
 import Swal from "sweetalert2";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { getUser } from "../services/authenticate";
 
 function FormComponent() {
   const [state, setState] = useState({
     title: "",
-    author: "",
+    author: getUser(),
   });
   const { title, author } = state;
 
