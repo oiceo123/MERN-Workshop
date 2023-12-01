@@ -1,8 +1,9 @@
 const jwt = require("jsonwebtoken");
+const { expressjwt } = require("express-jwt");
 
 const loginErr = "login-001";
 
-const login = (req, res) => {
+exports.login = (req, res) => {
   const { username, password } = req.body;
 
   if (username === process.env.USERNAME1 && password === process.env.PASSWORD) {
@@ -18,4 +19,8 @@ const login = (req, res) => {
   }
 };
 
-module.exports = { login };
+exports.requireLogin = expressjwt({
+  secret: process.env.JWT_SECRET_KEY,
+  algorithms: ["HS256"],
+  userProperty: "auth",
+});

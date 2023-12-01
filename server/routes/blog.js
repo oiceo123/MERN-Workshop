@@ -7,11 +7,12 @@ const {
   update,
   remove,
 } = require("../controllers/blogController");
+const { requireLogin } = require("../controllers/authController");
 
 router.get("/blog", getAllBlogs);
 router.get("/blog/:slug", singleBlog);
-router.post("/blog/create", create);
-router.put("/blog/:slug", update);
-router.delete("/blog/:slug", remove);
+router.post("/blog/create", requireLogin, create);
+router.put("/blog/:slug", requireLogin, update);
+router.delete("/blog/:slug", requireLogin, remove);
 
 module.exports = router;
