@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { getUser } from "../services/authenticate";
+import "../styles/FormComponent.css";
 
 function FormComponent() {
   const [state, setState] = useState({
@@ -55,7 +56,7 @@ function FormComponent() {
     <>
       <h1>เขียนบทความ</h1>
       <form onSubmit={submitForm}>
-        <div className="form-group">
+        <div className="form-group mb-2">
           <label>ชื่อบทความ</label>
           <input
             type="text"
@@ -64,7 +65,7 @@ function FormComponent() {
             onChange={inputValue("title")}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group mb-2">
           <label>รายละเอียด</label>
           <ReactQuill
             value={content}
