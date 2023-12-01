@@ -10,20 +10,22 @@ function NavbarComponent({ history }) {
             หน้าแรก
           </Link>
         </li>
-        <li className="nav-item py-3">
-          <Link to="/create" className="nav-link">
-            เขียนบทความ
-          </Link>
-        </li>
         {getUser() ? (
-          <li className="nav-item py-3">
-            <button
-              className="nav-link"
-              onClick={() => logout(() => history.push("/"))}
-            >
-              ออกจากระบบ
-            </button>
-          </li>
+          <>
+            <li className="nav-item py-3">
+              <Link to="/create" className="nav-link">
+                เขียนบทความ
+              </Link>
+            </li>
+            <li className="nav-item py-3">
+              <button
+                className="nav-link"
+                onClick={() => logout(() => history.push("/"))}
+              >
+                ออกจากระบบ
+              </button>
+            </li>
+          </>
         ) : (
           <li className="nav-item py-3">
             <Link to="/login" className="nav-link">
