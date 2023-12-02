@@ -22,9 +22,7 @@ npm install mongoose@6.12.3
 ```
 
 <h2>Database Schema</h2>
-<div style="text-align: center; background-color: #f7f7f7;">
-    <img src="./screenshots/database_schema.png"></img>
-</div>
+<img src="./screenshots/database_schema.png"></img>
 
 <h2>.env Example</h2>
 
