@@ -1,6 +1,7 @@
 <h1>MERN Workshop</h1>
 
 <p>MERN Workshop is a blog post project made by MongoDB, Express, React and Node.js.</p>
+<p>You can see an example of a live application running at: <a href="https://mern-stack-workshop-ui-2e75ebd34bea.herokuapp.com/">here</a></p>
 
 <h2>IntelliSense</h2>
 

@@ -1,6 +1,5 @@
 <h1>MERN Workshop Client</h1>
 <p>Client is user interface for blog post project made by React</p>
-<p>You can see an example of a live application running at: <a href="https://mern-stack-workshop-ui-2e75ebd34bea.herokuapp.com/">here</a></p>
 
 <h2>Required</h2>
 <ul>
