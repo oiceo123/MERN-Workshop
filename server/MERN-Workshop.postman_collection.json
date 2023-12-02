@@ -1,0 +1,613 @@
+{
+	"info": {
+		"_postman_id": "4d338e84-db94-4697-82ac-7f77f8dd56cf",
+		"name": "MERN-Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15350961"
+	},
+	"item": [
+		{
+			"name": "blog",
+			"item": [
+				{
+					"name": "get all blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/blog",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"blog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200-ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/blog",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"blog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4305"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10d1-OxCC7AdnR6JfwVT1CUQfnB6WTbA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:51:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6555fd63172130adf713b32c\",\n        \"title\": \"install mern stack\",\n        \"content\": \"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\",\n        \"author\": \"kongruksiam\",\n        \"slug\": \"install-mern-stack\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6555ff4f690d033ac5e1217e\",\n        \"title\": \"install mern stack1\",\n        \"content\": \"เนื้อหาเกี่ยวกับบทความ\",\n        \"author\": \"kongruksiam\",\n        \"slug\": \"install-mern-stack1\",\n        \"createdAt\": \"2023-11-16T11:38:55.102Z\",\n        \"updatedAt\": \"2023-11-16T11:38:55.102Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65560190690d033ac5e12182\",\n        \"title\": \"React Basic\",\n        \"content\": \"เนื้อหาเกี่ยวกับบทความ react basic\",\n        \"author\": \"\",\n        \"slug\": \"react-basic\",\n        \"createdAt\": \"2023-11-16T11:48:32.701Z\",\n        \"updatedAt\": \"2023-11-16T11:48:32.701Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6556027e9104cf1d186b4c4b\",\n        \"title\": \"React Basic MERN\",\n        \"content\": \"เนื้อหาเกี่ยวกับบทความ react basic mern\",\n        \"author\": \"Admin\",\n        \"slug\": \"react-basic-mern\",\n        \"createdAt\": \"2023-11-16T11:52:30.327Z\",\n        \"updatedAt\": \"2023-11-16T11:52:30.327Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"655602ed9104cf1d186b4c4d\",\n        \"title\": \"NextJS\",\n        \"content\": \"เนื้อหาเกี่ยวกับบทความ NextJS\",\n        \"author\": \"i\",\n        \"slug\": \"nextjs\",\n        \"createdAt\": \"2023-11-16T11:54:21.309Z\",\n        \"updatedAt\": \"2023-11-16T11:54:21.309Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6556033ce647f1ab421becba\",\n        \"title\": \"NuxtJS\",\n        \"content\": \"เนื้อหาเกี่ยวกับบทความ NuxtJS\",\n        \"author\": \"ice\",\n        \"slug\": \"nuxtjs\",\n        \"createdAt\": \"2023-11-16T11:55:40.958Z\",\n        \"updatedAt\": \"2023-11-16T11:55:40.958Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65664e671dd7d4f9ace7681e\",\n        \"title\": \"install window 11\",\n        \"content\": \"ติดตั้ง window 11\",\n        \"author\": \"ice\",\n        \"slug\": \"install-window-11\",\n        \"createdAt\": \"2023-11-28T20:32:39.316Z\",\n        \"updatedAt\": \"2023-11-28T20:32:39.316Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"656652c94dabe09d5d2f3939\",\n        \"title\": \"install sweetalert2\",\n        \"content\": \"ติดตั้ง sweetalert2\",\n        \"author\": \"\",\n        \"slug\": \"install-sweetalert2\",\n        \"createdAt\": \"2023-11-28T20:51:21.896Z\",\n        \"updatedAt\": \"2023-11-28T20:51:21.896Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"656654954dabe09d5d2f393d\",\n        \"title\": \"install sweetalert3.1\",\n        \"content\": \"ติดตั้ง sweetalert3.1\",\n        \"author\": \"ice\",\n        \"slug\": \"install-sweetalert3.1\",\n        \"createdAt\": \"2023-11-28T20:59:01.238Z\",\n        \"updatedAt\": \"2023-11-28T20:59:01.238Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"65670405b8357dae2196de77\",\n        \"title\": \"NuxtJS-test\",\n        \"content\": \"เนื้อหาเกี่ยวกับบทความ NuxtJS\",\n        \"author\": \"ice\",\n        \"slug\": \"nuxtjs-test\",\n        \"createdAt\": \"2023-11-29T09:27:33.461Z\",\n        \"updatedAt\": \"2023-11-29T09:27:33.461Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "get single blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/blog/:slug",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"blog",
+								":slug"
+							],
+							"variable": [
+								{
+									"key": "slug",
+									"value": "install-mern-stack1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200-ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/blog/:slug",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"blog",
+										":slug"
+									],
+									"variable": [
+										{
+											"key": "slug",
+											"value": "install-mern-stack1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "281"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"119-QfJkuWCvc4v1Vpp9QPzxA6P8v4U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Nov 2023 11:55:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6555ff4f690d033ac5e1217e\",\n    \"title\": \"install mern stack1\",\n    \"content\": \"เนื้อหาเกี่ยวกับบทความ\",\n    \"author\": \"kongruksiam\",\n    \"slug\": \"install-mern-stack1\",\n    \"createdAt\": \"2023-11-16T11:38:55.102Z\",\n    \"updatedAt\": \"2023-11-16T11:38:55.102Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "add blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Authentication\",\r\n    \"content\": \"ทดสอบ Authentication\",\r\n    \"author\": \"ice\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/blog/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"blog",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201-created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Test Authentication\",\r\n    \"content\": \"ทดสอบ Authentication\",\r\n    \"author\": \"ice\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/blog/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"blog",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "237"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ed-SPSw1GZpb8omX6aVqa819gMazyk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 15:42:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Test Authentication\",\n    \"content\": \"ทดสอบ Authentication\",\n    \"author\": \"ice\",\n    \"slug\": \"test-authentication\",\n    \"_id\": \"6569fed7cb87342c8b0673cf\",\n    \"createdAt\": \"2023-12-01T15:42:15.480Z\",\n    \"updatedAt\": \"2023-12-01T15:42:15.480Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "update blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"test-authentication\",\r\n    \"author\": \"AuthenticateUser\",\r\n    \"content\": \"ทดสอบการ Authenticate\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/blog/:slug",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"blog",
+								":slug"
+							],
+							"variable": [
+								{
+									"key": "slug",
+									"value": "test-authentication"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200-ok",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"test-authentication\",\r\n    \"author\": \"AuthenticateUser\",\r\n    \"content\": \"ทดสอบการ Authenticate\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/blog/:slug",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"blog",
+										":slug"
+									],
+									"variable": [
+										{
+											"key": "slug",
+											"value": "test-authentication"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"101-0mlkReGEV3gN5iVf7awJtxV4/Mc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 15:46:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6569fed7cb87342c8b0673cf\",\n    \"title\": \"test-authentication\",\n    \"content\": \"ทดสอบการ Authenticate\",\n    \"author\": \"AuthenticateUser\",\n    \"slug\": \"test-authentication\",\n    \"createdAt\": \"2023-12-01T15:42:15.480Z\",\n    \"updatedAt\": \"2023-12-01T15:46:22.768Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "delete blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/blog/:slug",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"blog",
+								":slug"
+							],
+							"variable": [
+								{
+									"key": "slug",
+									"value": "test-authentication"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200-ok",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/blog/:slug",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"blog",
+										":slug"
+									],
+									"variable": [
+										{
+											"key": "slug",
+											"value": "test-authentication"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-1IaWg3TBZIsaqsUj+nlVdn/ydAo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Dec 2023 15:48:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"ลบบทความเรียบร้อย\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let res = pm.response.json()\r",
+									"let token = res.token\r",
+									"pm.environment.set(\"token\", token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200-ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b8-1Qf+B7q7cR0xGYjEJOQr0/eaoAo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Nov 2023 20:09:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzAxMzc0OTUzLCJleHAiOjE3MDE0NjEzNTN9.bv4fzmbiFAUpUIEly5jwe7KNorf9feluflwsTgd8v2Y\",\n    \"username\": \"admin\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
