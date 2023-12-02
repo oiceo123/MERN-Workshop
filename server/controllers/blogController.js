@@ -5,15 +5,12 @@ const { v4: uuidv4 } = require("uuid");
 
 // ErrCode
 const createErr = "blog-001";
+const updateErr = "blog-002";
 
 // บันทึกข้อมูล
 const create = (req, res) => {
-  const { title, content, author } = req.body;
-  let slug = slugify(title);
-
-  if (!slug) {
-    slug = uuidv4();
-  }
+  const { title, content } = req.body;
+  let { author } = req.body;
 
   // validate
   switch (true) {
@@ -27,6 +24,26 @@ const create = (req, res) => {
         trace_id: createErr,
         error: "กรุณาป้อนเนื้อหาบทความ",
       });
+    case !title.trim():
+      return res.status(400).json({
+        trace_id: createErr,
+        error: "กรุณาป้อนชื่อบทความ",
+      });
+    case !content.trim():
+      return res.status(400).json({
+        trace_id: createErr,
+        error: "กรุณาป้อนเนื้อหาบทความ",
+      });
+  }
+
+  if (!author || !author.trim()) {
+    author = "Admin";
+  }
+
+  let slug = slugify(title);
+
+  if (!slug) {
+    slug = uuidv4();
   }
 
   // save data
@@ -68,11 +85,46 @@ const remove = (req, res) => {
 
 const update = (req, res) => {
   const { slug } = req.params;
-  const { title, content, author } = req.body;
+  const { title, content } = req.body;
+  let { author } = req.body;
+
+  // validate
+  switch (true) {
+    case !title:
+      return res.status(400).json({
+        trace_id: updateErr,
+        error: "กรุณาป้อนชื่อบทความ",
+      });
+    case !content:
+      return res.status(400).json({
+        trace_id: updateErr,
+        error: "กรุณาป้อนเนื้อหาบทความ",
+      });
+    case !title.trim():
+      return res.status(400).json({
+        trace_id: updateErr,
+        error: "กรุณาป้อนชื่อบทความ",
+      });
+    case !content.trim():
+      return res.status(400).json({
+        trace_id: updateErr,
+        error: "กรุณาป้อนเนื้อหาบทความ",
+      });
+  }
+
+  if (!author || !author.trim()) {
+    author = "Admin";
+  }
+
   blogs
     .findOneAndUpdate({ slug }, { title, content, author }, { new: true })
     .exec((err, blog) => {
-      if (err) console.log(err);
+      if (err) {
+        return res.status(500).json({
+          trace_id: updateErr,
+          error: "เกิดข้อผิดพลาด",
+        });
+      }
       res.status(200).json(blog);
     });
 };

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "../api";
 import Swal from "sweetalert2";
 import ReactQuill from "react-quill";
@@ -13,6 +13,7 @@ function EditComponent(props) {
   });
   const { title, author, slug } = state;
   const [content, setContent] = useState("");
+  const quillRef = useRef(null);
 
   useEffect(() => {
     axios
@@ -42,9 +43,11 @@ function EditComponent(props) {
       <div className="form-group">
         <label>รายละเอียด</label>
         <ReactQuill
+          ref={quillRef}
           value={content}
           onChange={updateContent}
           theme="snow"
+          placeholder="เขียนรายละเอียดบทความของคุณ"
         />
       </div>
       <div className="form-group">
@@ -78,25 +81,33 @@ function EditComponent(props) {
 
   const submitForm = (event) => {
     event.preventDefault();
-    axios
-      .put(`/blog/${slug}`, { title, content, author })
-      .then((res) => {
-        Swal.fire({
-          title: "แจ้งเตือน",
-          text: "อัพเดทบทความเรียบร้อย",
-          icon: "success",
-        });
-        const { title, content, author, slug } = res.data;
-        setState({ ...state, title, author, slug });
-        setContent(content);
-      })
-      .catch((err) => {
-        Swal.fire({
-          title: "แจ้งเตือน",
-          text: "เกิดข้อผิดพลาด",
-          icon: "error",
-        });
+    if (quillRef.current.unprivilegedEditor.getText().trim() === "") {
+      Swal.fire({
+        title: "แจ้งเตือน",
+        text: "กรุณาป้อนเนื้อหาบทความ",
+        icon: "error",
       });
+    } else {
+      axios
+        .put(`/blog/${slug}`, { title, content, author })
+        .then((res) => {
+          Swal.fire({
+            title: "แจ้งเตือน",
+            text: "อัพเดทบทความเรียบร้อย",
+            icon: "success",
+          });
+          const { title, content, author, slug } = res.data;
+          setState({ ...state, title, author, slug });
+          setContent(content);
+        })
+        .catch((err) => {
+          Swal.fire({
+            title: "แจ้งเตือน",
+            text: err.response.data.error,
+            icon: "error",
+          });
+        });
+    }
   };
 
   return (

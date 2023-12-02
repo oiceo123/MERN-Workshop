@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "../api";
 import Swal from "sweetalert2";
 import ReactQuill from "react-quill";
@@ -14,6 +14,8 @@ function FormComponent() {
   const { title, author } = state;
 
   const [content, setContent] = useState("");
+
+  const quillRef = useRef(null);
 
   // ฟังก์ชั่นนี้มีค่าเท่ากับฟังก์ชั่นด้านล่าง
   /* const inputValue = function (name) {
@@ -32,24 +34,32 @@ function FormComponent() {
 
   const submitForm = (event) => {
     event.preventDefault();
-    axios
-      .post("/blog/create", { title, content, author })
-      .then((res) => {
-        Swal.fire({
-          title: "แจ้งเตือน",
-          text: "บันทึกข้อมูลบทความเรียบร้อย",
-          icon: "success",
-        });
-        setState({ ...state, title: "", author: "" });
-        setContent("");
-      })
-      .catch((err) => {
-        Swal.fire({
-          title: "แจ้งเตือน",
-          text: err.response.data.error,
-          icon: "error",
-        });
+    if (quillRef.current.unprivilegedEditor.getText().trim() === "") {
+      Swal.fire({
+        title: "แจ้งเตือน",
+        text: "กรุณาป้อนเนื้อหาบทความ",
+        icon: "error",
       });
+    } else {
+      axios
+        .post("/blog/create", { title, content, author })
+        .then((res) => {
+          Swal.fire({
+            title: "แจ้งเตือน",
+            text: "บันทึกข้อมูลบทความเรียบร้อย",
+            icon: "success",
+          });
+          setState({ ...state, title: "", author: getUser() });
+          setContent("");
+        })
+        .catch((err) => {
+          Swal.fire({
+            title: "แจ้งเตือน",
+            text: err.response.data.error,
+            icon: "error",
+          });
+        });
+    }
   };
 
   return (
@@ -68,6 +78,7 @@ function FormComponent() {
         <div className="form-group mb-2">
           <label>รายละเอียด</label>
           <ReactQuill
+            ref={quillRef}
             value={content}
             onChange={updateContent}
             theme="snow"
